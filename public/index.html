@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Form</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .form-box {
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+    }
+
+    form {
+      padding: 25px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 320px;
+      background: white;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+
+    .btn-row {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      padding: 8px 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .submit-btn {
+      background: #2a8ef7;
+      color: white;
+    }
+
+    .reset-btn {
+      background: #ff6961;
+      color: white;
+    }
+
+    .view-btn {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background: #4caf50;
+      color: white;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .view-btn:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-box">
+    <form id="userForm" action="/addUser" method="POST">
+      <h2>Add User</h2>
+
+      <label>Name:</label>
+      <input type="text" name="name" required />
+
+      <label>Email:</label>
+      <input type="email" name="email" required />
+
+      <label>Password:</label>
+      <input type="password" name="password" required />
+
+      <div class="btn-row">
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="button" class="reset-btn" onclick="">Reset</button>
+      </div>
+
+      <!-- View All Users Button -->
+      <a href="/getUser" class="view-btn">See All Users</a>
+    </form>
+  </div>
+
+  <script>
+    function resetForm() {
+      document.getElementById("userForm").reset();
+    }
+  </script>
+
+</body>
+</html>
